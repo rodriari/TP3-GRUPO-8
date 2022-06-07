@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}"  rel="stylesheet" type="text/css">
+<link th:href="@{/css/registro.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/index.css}" rel="stylesheet" type="text/css" href="/static/css/index.css">
+<title>GRUPO8</title>
+</head>
+<body>
+<header>
+<div class="menu">
+<nav>
+   <ul>
+   <li class="barra"><a class="texto" href="/otroUsuario">Registrar Usuario</a></li>
+      <li class="barra"><a class="texto" href="/otroCurso">Registrar Curso</a></li>
+      <li class="barra"><a class="texto" th:href="@{/listarUsuario}">Lista de Usuarios</a></li>
+      <li class="barra"><a class="texto" href="/listarCursos">Lista de Cursos</a></li>
+   </ul>
+</nav>
+</div>
+</header>
+<div class= "container">
+	<div class="alert alert-success alert-dismissible fade show row" role="alert" th:if="${formUsuarioErrorMessage}" >
+		<label th:text="${formUsuarioErrorMessage}"></label>  
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	</div>
+</div>
+
+<div class="container">
+<h4> Formulario de Usuario</h4>
+<form th:object="${usuario}" th:action="${editMode}?@{/editarUsuario}:@{/guardarUsuario}" method="post">
+ 	
+ 	<input type="hidden" class="form-control"  th:if="${editMode}" th:field="*{contraseña}">
+	<input type="hidden" class="form-control"  th:if="${editMode}" th:field="*{estado}">
+	<input type="hidden" class="form-control"  th:if="${editMode}" th:field="*{dni}">
+		
+   <div class="mb-3" th:if="${editMode == false}">
+    <label for="dniID" class="form-label">Dni</label>
+    <input th:field="*{dni}" type="text" class="form-control" id="dniID" required>
+    <div class="alert" th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}"></div>
+  </div>
+  <div class="mb-3">
+    <label for="nombreID" class="form-label">Nombre</label>
+    <input th:field="*{nombre}" type="text" class="form-control" id="nombreID" required>
+    <div class="alert" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+  </div>
+  <div class="mb-3">
+    <label for="apellidoID" class="form-label">Apellido</label>
+    <input th:field="*{apellido}" type="text" class="form-control" id="apellidoID" required>
+    <div class="alert" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></div>
+  </div>
+  <div class="mb-3">
+    <label for="emailID" class="form-label">Email </label>
+    <input th:field="*{email}" type="email" class="form-control" id="emailID" required>
+    <div class="alert" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+  </div>
+  <div class="mb-3" th:if="${editMode == false}">
+    <label for="passwdID" class="form-label">Contraseña</label>
+    <input th:field="*{contraseña}" type="password" class="form-control" id="passwdID" required>
+    <div class="alert" th:if="${#fields.hasErrors('contraseña')}" th:errors="*{contraseña}"></div>
+  </div>
+    <div class="mb-3">
+    <label for="birthdateID" class="form-label">Fecha de Nacimiento</label>
+    <input th:field="*{fechanacimiento}" type="date" class="form-control" id="birthdateID">
+     <div class="alert" th:if="${#fields.hasErrors('fechanacimiento')}" th:errors="*{fechanacimiento}"></div>
+  </div>
+  <button type="submit" class="botons"><span th:text="${editMode}?'Modificar':'Guardar'"></span></button>
+  <a class="botons" th:href="@{/}">Volver</a>
+  
+</form>
+
+
+</div>
+
+<script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"
+		type="text/javascript" src="webjars/jquery/3.6.0/jquery.min.js"></script>
+<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}"
+		type="text/javascript"
+		src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

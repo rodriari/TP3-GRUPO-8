@@ -1,0 +1,148 @@
+@charset "ISO-8859-1";
+body{
+	background: url("/img/paisaje-ocaso-atardecer-mochilero-viaje-viajero-ilustracion-wallpaper-fondo-pantalla-senal-colombia-elver-mora-1920x1080.jpg");	
+}
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;	
+}
+.container{
+	margin-top: 20px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.container .fila{
+	width: 15%;
+	background: transparent;
+	text-align:center;
+	padding: 15px;
+	border-radius: 4px;
+	margin-bottom: 100px;
+	border: 1px solid black;
+	font-family: 'calibri';
+	font-size: 18px;
+}
+.container .accion{
+	width: 10%;
+	text-align:center;
+	background: transparent;
+	padding: 15px;
+	border-radius: 4px;
+	margin-bottom: 100px;
+	border: 1px solid black;
+	font-family: 'calibri';
+	font-size: 18px;
+}
+.table{
+	width: 100%;
+	background: transparent;
+	padding: 10px;
+	border-radius: 4px;
+	margin-bottom: 16px;
+	border: 1px solid black;
+	font-family: 'calibri';
+	font-size: 18px;
+}
+.container .usuarios{
+	width: 15%;
+	background: transparent;
+	text-align:center;
+	padding: 15px;
+	border-radius: 4px;
+	margin-bottom: 100px;
+	font-family: 'calibri';
+	font-size: 18px;
+}
+.botoneditar{
+	width: 100px;
+	text-align:center;
+	background: rgb(0, 255, 64);
+	padding: 12px;
+	color: white;
+	margin: 18px 0;
+	font-size: 16px;
+}
+.botontirar{
+	width: 50%;
+	text-align:center;
+	background: #1f53c5;
+	border: none;
+	padding: 12px;
+	color: white;
+	margin: 18px 0;
+	font-size: 16px;
+}
+.modal{
+	width: 350px;
+	padding: 5px;
+	margin: auto;
+	margin-top: 15px;
+	border-radius: 4px;
+	font-family: 'calibri';
+	color: black;
+}
+.modal-content{
+	width: 100%;
+	background: orange;
+	padding: 15px;
+	border-radius: 4px;
+	margin-bottom: 100px;
+	border: 1px solid black;
+	font-family: 'calibri';
+	font-size: 40px;
+}
+.modal-header{
+	width: 100%;
+	background:  rgb(176, 120, 36);
+	padding: 15px;
+	border-radius: 4px;
+	border: 1px solid black;
+	font-family: 'calibri';
+	font-size: 40px;
+}
+.modal-title{
+	width:100%;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	
+}
+.btn-close{
+	width: 20px;
+	margin-left: 270px;
+	margin-top: 0px;
+}
+.modal-body{
+	width: 100%;
+	margin-left: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.form-control{
+	width: 100%;
+	margin-left: 1px;
+	padding: 10px;	
+}
+.modal-footer{
+	width: 100%;
+	margin-left: 20px;
+}
+.btn-p {
+	width: 45%;
+	background: rgb(0, 255, 64);
+	border: none;
+	padding: 12px;
+	color: black;
+	margin: 20px 0;
+	font-size: 15px;
+}
+.btn-s {
+	width: 45%;
+	background: yellow;
+	border: none;
+	padding: 12px;
+	color: black;
+	margin: 20px 0;
+	font-size: 15px;
+}
