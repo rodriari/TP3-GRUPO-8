@@ -52,8 +52,8 @@
       <td class="usuarios" th:text="${course.docente}"></td>
       <td class="usuarios" th:text="${course.cupo}"></td>
       <td>
-      	<a class="botoneditar btn-warning fa fa-pencil" th:href="@{/editeCourse/}+${course.id}"></a>
-      	<a class="botontirar btn-danger fa fa-trash" id="borrar" th:href="'javascript:confirmarEliminar(\''+${course.id}+'\');'"></a>
+      	<a class="botoneditar btn-warning fa fa-pencil" th:href="@{/editeCourse/}+${course.id}">editar</a>
+      	<a class="botontirar btn-danger fa fa-trash" th:href="'javascript:confirmarEliminar(\''+${course.id}+'\');'">guardar</a>
       </td>
       
     </tr>
@@ -88,7 +88,8 @@
 <script type="text/javascript">
 		var exampleModal = document.getElementById('modalEliminar')
 		exampleModal.addEventListener('show.bs.modal', function(event) {
-			// Button that triggered the modal
+			exampleModal.style.display="block"
+				// Button that triggered the modal
 			var button = event.relatedTarget
 			// Extract info from data-bs-* attributes
 			var recipient = button.getAttribute('data-bs-mail')
@@ -111,7 +112,8 @@
 <script type="text/javascript">
 		function confirmarEliminar(id) {
 			$("#identificadorDeCurso").val(id);
-			$('#modalEliminar').modal('show');
+			//$('#modalEliminar').modal('toggle');
+			exampleModal.style.display="block"
 		}
 
 		function eliminarCurso() {
