@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <link th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}"  rel="stylesheet" type="text/css">
 <link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}"  rel="stylesheet" type="text/css">
-<link th:href="@{/css/ListaUsuario.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/ListaCursos.css}" rel="stylesheet" type="text/css">
 <link th:href="@{/css/index.css}" rel="stylesheet" type="text/css" href="/static/css/index.css">
 <title>GRUPO8</title>
 </head>
@@ -32,7 +32,7 @@
       <th class="fila" scope="col">Descripcion</th>
       <th class="fila" scope="col">Costo($)</th>
       <th class="fila" scope="col">Fecha de inicio</th>
-      <th class="fila" scope="col">Valoracion (1-10)</th>
+      <th class="fila" scope="col">Valoracion        (1-10)</th>
       <th class="fila" scope="col">Duracion (semanas)</th>
       <th class="fila" scope="col">Docente</th>
       <th class="fila" scope="col">Cupo</th>
@@ -53,7 +53,7 @@
       <td class="usuarios" th:text="${course.cupo}"></td>
       <td>
       	<a class="botoneditar btn-warning fa fa-pencil" th:href="@{/editeCourse/}+${course.id}">editar</a>
-      	<a class="botontirar btn-danger fa fa-trash" th:href="'javascript:confirmarEliminar(\''+${course.id}+'\');'">guardar</a>
+      	<a class="botontirar btn-danger fa fa-trash" th:href="'javascript:confirmarEliminar(\''+${course.id}+'\');'">borrar</a>
       </td>
       
     </tr>

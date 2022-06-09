@@ -9,13 +9,12 @@ box-sizing: border-box;
 }
 .container{
 	margin-top: 20px;
-	margin-right: 10px;
-	margin-left: 10px;
+	margin-right: 5px;
+	margin-left: 5px;
 }
 .container .fila{
-	width: 15%;
+	width: 10px;
 	background: transparent;
-	text-align:center;
 	padding: 15px;
 	border-radius: 4px;
 	margin-bottom: 10px;
@@ -23,8 +22,8 @@ box-sizing: border-box;
 	font-family: 'calibri';
 	font-size: 18px;
 }
-.container .accion{
-	width: 10%;
+.container .table .accion{
+	width: 12%;
 	text-align:center;
 	background: transparent;
 	padding: 15px;
@@ -38,14 +37,14 @@ box-sizing: border-box;
 	width: 100%;
 	background: transparent;
 	padding: 10px;
-	border-radius: 4px;
+	border-radius: 1px;
 	margin-bottom: 16px;
 	border: 1px solid black;
 	font-family: 'calibri';
-	font-size: 18px;
+	font-size: 20px;
 }
-.container .usuarios{
-	width: 15%;
+.container .table .usuarios{
+	width: 9%;
 	background: transparent;
 	text-align:center;
 	padding: 15px;
