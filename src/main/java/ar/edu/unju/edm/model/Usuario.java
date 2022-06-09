@@ -2,8 +2,6 @@ package ar.edu.unju.edm.model;
 
 import java.time.LocalDate;
 
-
-
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -13,6 +11,7 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
+
 
 @Component
 public class Usuario {
