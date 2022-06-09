@@ -77,7 +77,7 @@ public class UsuarioController {
 	}
 	// modificar usuario
 	@GetMapping("/update/{dni}")
-	public ModelAndView modUser(Model model, @PathVariable(name="dni") int dni) throws Exception {
+	public ModelAndView modUser(Model model, @PathVariable(name="dni") Long dni) throws Exception {
 		Usuario usuarioEncontrado = new Usuario();
 		usuarioEncontrado = usuarioService.buscarUsuario(dni);	
 		ModelAndView usermod = new ModelAndView("RegistrarUsuario");
@@ -120,7 +120,7 @@ public class UsuarioController {
 	
 	// eliminar usuarios
 	@RequestMapping("/del/{dni}")
-	public String deleteUser(@PathVariable(name="dni") int dni, Model model) {
+	public String deleteUser(@PathVariable(name="dni") Long dni, Model model) {
 		try {
 			usuarioService.eliminarUsuario(dni);
 		}catch(Exception e){

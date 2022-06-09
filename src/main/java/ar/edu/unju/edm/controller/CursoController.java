@@ -86,7 +86,7 @@ public class CursoController {
 		
 		// modificar curso
 		@RequestMapping("/editeCourse/{id}")
-		public ModelAndView modCourse(@PathVariable(name="id") int id) throws Exception { 
+		public ModelAndView modCourse(@PathVariable(name="id") Long id) throws Exception { 
 			Curso coursetomod = new Curso();
 			coursetomod = cursoService.buscarCurso(id);
 			ModelAndView coursemod = new ModelAndView("RegistrarCurso");
@@ -125,7 +125,7 @@ public class CursoController {
 		
 		// eliminar cursos
 		@RequestMapping("/deleteCourse/{id}")
-		public String deleteCourse(@PathVariable(name="id") int id, Model model) {
+		public String deleteCourse(@PathVariable(name="id") Long id, Model model) {
 			try {
 				cursoService.eliminarCurso(id);
 			}catch(Exception e){

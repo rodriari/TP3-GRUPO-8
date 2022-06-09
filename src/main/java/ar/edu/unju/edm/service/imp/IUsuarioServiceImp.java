@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import ar.edu.unju.edm.controller.UsuarioController;
 import ar.edu.unju.edm.model.Usuario;
+import ar.edu.unju.edm.repository.UsuarioRepository;
 import ar.edu.unju.edm.service.IUsuarioService;
 import ar.edu.unju.edm.util.ListaUsuario;
 
@@ -20,35 +21,27 @@ public class IUsuarioServiceImp implements IUsuarioService{
 	private static final Log GRUPO8 = LogFactory.getLog(UsuarioController.class);
 	
 	@Autowired
-	ListaUsuario lista;
+	UsuarioRepository lista;
 	
 	@Override
 	public void guardarUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
-		usuario.setEstado(true);
-		lista.getListado().add(usuario);
+		lista.save(usuario);
 	}
 
 	@Override
-	public void eliminarUsuario(int id) {
+	public void eliminarUsuario(Long id) throws Exception {
 		// TODO Auto-generated method stub		
-		for (int i = 0; i < lista.getListado().size(); i++) {			
-			if (lista.getListado().get(i).getDni()==id) {				
-				lista.getListado().get(i).setEstado(false);		
-			}            
-        }		
+		Usuario auxiliar = new Usuario();
+		auxiliar = buscarUsuario(id);
+		lista.delete(auxiliar);
 	}
 
 	@Override
 	public void modificarUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
 		
-		for (int i = 0; i < lista.getListado().size(); i++) {			
-			if (lista.getListado().get(i).getDni() == usuario.getDni()) {
-				GRUPO8.error("encontrando: usuario"+i);
-				lista.getListado().set(i, usuario);			
-			}            
-        }
+	lista.save(usuario);
 	}
 
 	@Override
@@ -56,28 +49,21 @@ public class IUsuarioServiceImp implements IUsuarioService{
 		// TODO Auto-generated method stub
 		List<Usuario> auxiliar = new ArrayList<>();
 		GRUPO8.info("ingresando al metodo arraylist: listar usuarios");
-		for (int i = 0; i < lista.getListado().size(); i++) {
-			
-			if (lista.getListado().get(i).getEstado()==true) {
-				auxiliar.add(lista.getListado().get(i));
-				GRUPO8.error("recorriendo arraylist: usuarios "+lista.getListado().get(i).getDni());
-			}            
-        }
+        
+		auxiliar = (List<Usuario>) lista.findAll();
+		
 		return auxiliar;
 	}
 
 	
 
 	@Override
-	public Usuario buscarUsuario(int id) {
+	public Usuario buscarUsuario(Long id) throws Exception {
 		// TODO Auto-generated method stub
 		Usuario usuarioEncontrado = new Usuario();
-		for (int i = 0; i < lista.getListado().size(); i++) {
-			if (lista.getListado().get(i).getDni() == id) {
-				usuarioEncontrado = lista.getListado().get(i);		
-			}            
-        }
-		return usuarioEncontrado;
+        usuarioEncontrado=lista.findById(id).orElseThrow(()->new Exception("usuario no encontrado"));
+        return usuarioEncontrado;
+
 	}
 
 }

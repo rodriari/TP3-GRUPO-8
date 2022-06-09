@@ -27,7 +27,7 @@ public class Usuario {
 	@Column (name= "DNI", nullable = true)
 	@Min(value=1000000, message="El dni debe ser mayor a 1.000.000")
 	@Max(value=99999999, message="El dni debe ser menor a 99.999.999")
-	private int dni;
+	private Long dni;
 	
 	@NotEmpty //@Email
 	@Column (name= "MAIL", nullable = true)
@@ -58,19 +58,10 @@ public class Usuario {
 	
 	private LocalDate fechanacimiento;
 	
-	private Boolean estado;
-	
-
-	public Boolean getEstado() {
-		return estado;
-	}
-	public void setEstado(Boolean estado) {
-		this.estado = estado;
-	}
-	public int getDni() {
+	public Long getDni() {
 		return dni;
 	}
-	public void setDni(int dni) {
+	public void setDni(Long dni) {
 		this.dni = dni;
 	}
 	public Usuario() {
