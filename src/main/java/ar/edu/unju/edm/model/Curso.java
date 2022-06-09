@@ -26,7 +26,7 @@ public class Curso {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column (name= "ID", nullable = true)
-	private int id;
+	private Long id;
 	@Size(min=3, max=100, message="EL nombre debe tener 3 caracteres minimo, maximo 100")
 	@NotBlank(message="El nombre no puede ser espacios en blanco")
 	@NotEmpty(message="El nombre no puede estar vacio")
@@ -68,10 +68,10 @@ public class Curso {
 	public Curso() {
 		// TODO Auto-generated constructor stub
 	}
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNombre() {

@@ -12,8 +12,7 @@ import org.springframework.stereotype.Service;
 import ar.edu.unju.edm.controller.UsuarioController;
 import ar.edu.unju.edm.model.Usuario;
 import ar.edu.unju.edm.repository.UsuarioRepository;
-import ar.edu.unju.edm.service.IUsuarioService;
-import ar.edu.unju.edm.util.ListaUsuario;
+import ar.edu.unju.edm.service.IUsuarioService;;
 
 @Service
 public class IUsuarioServiceImp implements IUsuarioService{

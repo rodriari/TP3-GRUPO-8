@@ -20,7 +20,7 @@ public class ICursoServiceImp implements ICursoService{
 	private static final Log LOGGER = LogFactory.getLog(CursoController.class);
 	
 	@Autowired
-	ListaCursos lista;
+	ListaCursos listado;
 	
 	@Override
 	public void guardarCurso(Curso curso) {

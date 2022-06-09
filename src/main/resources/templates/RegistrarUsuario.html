@@ -32,7 +32,6 @@
 <form th:object="${usuario}" th:action="${editMode}?@{/editarUsuario}:@{/guardarUsuario}" method="post">
  	
  	<input type="hidden" class="form-control"  th:if="${editMode}" th:field="*{contraseña}">
-	<input type="hidden" class="form-control"  th:if="${editMode}" th:field="*{estado}">
 	<input type="hidden" class="form-control"  th:if="${editMode}" th:field="*{dni}">
 		
    <div class="mb-3" th:if="${editMode == false}">

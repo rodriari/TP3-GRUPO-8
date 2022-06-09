@@ -5,7 +5,7 @@
 <link th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}"  rel="stylesheet" type="text/css">
 <link th:href="@{/css/registro.css}" rel="stylesheet" type="text/css">
 <link th:href="@{/css/index.css}" rel="stylesheet" type="text/css" href="/static/css/index.css">
-<title>TP03 - GRUPO 10</title>
+<title>GRUPO8</title>
 </head>
 <body>
 <header>
@@ -32,7 +32,6 @@
 <h4> Formulario de Curso</h4>
 <form th:object="${curso}" th:action="${band}?@{/editarCurso}:@{/guardarCurso}"method="post">
   
-	<input type="hidden" class="form-control"  th:if="${band}" th:field="*{estado}">
 	  <input type="hidden" class="form-control"  th:if="${band}" th:field="*{id}">
 	  
   <div class="mb-3">

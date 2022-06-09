@@ -2,6 +2,7 @@ package ar.edu.unju.edm.service.imp;
 
 import java.util.ArrayList;
 
+
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -11,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import ar.edu.unju.edm.controller.CursoController;
 import ar.edu.unju.edm.model.Curso;
-import ar.edu.unju.edm.model.Usuario;
 import ar.edu.unju.edm.repository.CursoRepository;
 import ar.edu.unju.edm.service.ICursoService;
 import ar.edu.unju.edm.util.ListaCursos;
@@ -21,6 +21,9 @@ import ar.edu.unju.edm.util.ListaCursos;
 public class ICursoServiceImp implements ICursoService{
 
 	private static final Log GRUPO8 = LogFactory.getLog(CursoController.class);
+	
+	@Autowired
+	ListaCursos listado;
 	
 	@Autowired
 	CursoRepository lista;

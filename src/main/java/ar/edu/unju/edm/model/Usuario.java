@@ -36,8 +36,8 @@ public class Usuario {
 	@Size(min=4, max=30, message="La contraseña debe tener 4 caracteres minimo, maximo 30")
 	@NotBlank(message="La contraseña no puede ser espacios en blanco")
 	
-	@Column (name= "CONTRASEÑA", nullable = true)
-	private String contraseña;
+	@Column (name= "CONTRASE�A", nullable = true)
+	private String contrase�a;
 	
 	@Size(min=2, max=50, message="El apellido debe tener 2 caracteres minimo, maximo 50")
 	@NotBlank(message="El apellido no puede ser espacios en blanco")
@@ -66,10 +66,10 @@ public class Usuario {
 	}
 	public Usuario() {
 	}
-	public Usuario(String email, String contraseña) {
+	public Usuario(String email, String contrase�a) {
 		super();
 		this.email = email;
-		this.contraseña = contraseña;
+		this.contrase�a = contrase�a;
 	}
 	public String getEmail() {
 		return email;
@@ -77,11 +77,11 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getContraseña() {
-		return contraseña;
+	public String getContrase�a() {
+		return contrase�a;
 	}
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContrase�a(String contrase�a) {
+		this.contrase�a = contrase�a;
 	}
 	public String getNombre() {
 		return nombre;

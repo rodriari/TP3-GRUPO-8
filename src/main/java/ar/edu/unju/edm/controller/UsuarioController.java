@@ -111,7 +111,7 @@ public class UsuarioController {
 		 GRUPO8.error("DNI de usuarioparamod "+ usuarioparamod.getDni());
 		 GRUPO8.error("Nombre de usuarioparamod "+ usuarioparamod.getNombre());
 		ModelAndView vista1 = new ModelAndView("ListaUsuario");		
-		vista1.addObject("listausuarios", usuarioService.listarUsuarios());	
+		vista1.addObject("listaUsuarios", usuarioService.listarUsuarios());	
 		vista1.addObject("formUsuarioErrorMessage","Usuario modificado Correctamente");
 		
 		return vista1;
@@ -129,7 +129,7 @@ public class UsuarioController {
 			return "redirect:/otroUsuario";
 		}
 	    	
-	    return "redirect:/listarUsuario";
+	    return "redirect:/listaUsuario";
 
 	}
 }
