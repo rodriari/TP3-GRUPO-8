@@ -38,7 +38,7 @@ public class Curso {
 	
 	@Column (name = "DESCRIPCION")
 	private String descripcion;
-	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@DateTimeFormat(pattern="dd/MM/yyyy")
 	
 	@Column (name = "FEACHADENACIMIENTO")
 	private LocalDate fechainicio;

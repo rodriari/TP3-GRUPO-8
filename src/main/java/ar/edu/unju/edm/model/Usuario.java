@@ -23,7 +23,7 @@ import org.springframework.stereotype.Component;
 public class Usuario {
 
 	@Id 
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column (name= "DNI", nullable = true)
 	@Min(value=1000000, message="El dni debe ser mayor a 1.000.000")
 	@Max(value=99999999, message="El dni debe ser menor a 99.999.999")

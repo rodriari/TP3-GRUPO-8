@@ -90,6 +90,8 @@ public class UsuarioController {
 	
 	@PostMapping("/editarUsuario")
 	public ModelAndView savemodUser(@Valid @ModelAttribute ("usuario") Usuario usuarioparamod, BindingResult result ) {
+		GRUPO8.fatal("Error de validacion"+usuarioparamod.getContraseña());
+		GRUPO8.fatal("Error de validacion"+usuarioparamod.getDni());
 		/*if(result.hasFieldErrors("nombre") || result.hasFieldErrors("apellido") || result.hasFieldErrors("fechanacimiento") || result.hasFieldErrors("email") ) {*/
 			if(result.hasErrors()){
 			GRUPO8.fatal("Error de validacion");
@@ -129,7 +131,7 @@ public class UsuarioController {
 			return "redirect:/otroUsuario";
 		}
 	    	
-	    return "redirect:/listaUsuario";
+	    return "redirect:/listarUsuario";
 
 	}
 }
